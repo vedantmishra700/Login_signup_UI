@@ -2,24 +2,25 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Input, NativeBaseProvider, Button, Icon, Box, Image, AspectRatio } from 'native-base';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 
 
-function signup() {
+function Signup() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={styles.Middle}>
                 <Text style={styles.LoginText}>
-                    signup
+                    Signup
                 </Text>
             </View>
 
 
             <View style={styles.text2}>
-                <Text> Already have an account?</Text>
+                <Text> Already have an account?
+                </Text>
                 <TouchableOpacity onPress={() => navigation.navigate("Login")}>
                     <Text style={styles.signupText}> Login </Text>
                 </TouchableOpacity>
@@ -63,7 +64,7 @@ function signup() {
                     <Input
                         InputLeftElement={
                             <Icon
-                                as={<FontAwesome5 name="email" />}
+                                as={<MaterialCommunityIcons name="email" />}
                                 size="sm"
                                 m={2}
                                 _light={{
@@ -281,7 +282,7 @@ function signup() {
 export default () => {
     return (
         <NativeBaseProvider>
-            <signup />
+            <Signup />
         </NativeBaseProvider>
     )
 }
@@ -342,3 +343,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-around"
     }
 })
+
+
+
